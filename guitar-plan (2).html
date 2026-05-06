@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Plan Guitarra</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Guitarra">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0d0d0f">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+:root {
+  --bg:#0d0d0f;--bg2:#141416;--bg3:#1c1c20;--bg4:#242428;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --text:#f0f0ee;--text2:#9999a0;--text3:#555560;
+  --teal:#2dd4a8;--teal-dim:rgba(45,212,168,0.12);
+  --purple:#a78bfa;--purple-dim:rgba(167,139,250,0.12);
+  --coral:#fb7185;--coral-dim:rgba(251,113,133,0.12);
+  --amber:#fbbf24;--amber-dim:rgba(251,191,36,0.1);
+  --mono:'Space Mono',monospace;--sans:'DM Sans',sans-serif;
+  --r:12px;--rs:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh}
+svg{display:inline-block;vertical-align:middle}
+
+.hdr{position:sticky;top:0;z-index:100;background:rgba(13,13,15,0.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:13px 16px;display:flex;align-items:center;justify-content:space-between}
+.hdr-title{font-family:var(--mono);font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px}
+.hdr-title em{color:var(--teal);font-style:normal}
+.hdr-prog{font-family:var(--mono);font-size:11px;color:var(--text3)}
+.hdr-prog b{color:var(--teal)}
+
+.tabs{display:flex;gap:6px;padding:13px 16px 0;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;padding:7px 14px;border-radius:20px;border:1px solid var(--border);background:var(--bg2);color:var(--text2);font-family:var(--mono);font-size:11px;font-weight:700;cursor:pointer;letter-spacing:.04em;white-space:nowrap;transition:all .18s}
+.tab:active{transform:scale(.96)}
+.tab.af1{background:var(--teal-dim);border-color:var(--teal);color:var(--teal)}
+.tab.af2{background:var(--purple-dim);border-color:var(--purple);color:var(--purple)}
+.tab.af3{background:var(--coral-dim);border-color:var(--coral);color:var(--coral)}
+.tab.af4{background:var(--amber-dim);border-color:var(--amber);color:var(--amber)}
+
+.hero{margin:13px 16px 0;border-radius:var(--r);padding:18px;border:1px solid var(--border);overflow:hidden}
+.hero.f1{background:linear-gradient(135deg,rgba(45,212,168,.07) 0%,var(--bg2) 60%);border-color:rgba(45,212,168,.22)}
+.hero.f2{background:linear-gradient(135deg,rgba(167,139,250,.07) 0%,var(--bg2) 60%);border-color:rgba(167,139,250,.22)}
+.hero.f3{background:linear-gradient(135deg,rgba(251,113,133,.07) 0%,var(--bg2) 60%);border-color:rgba(251,113,133,.22)}
+.hero.f4{background:linear-gradient(135deg,rgba(251,191,36,.07) 0%,var(--bg2) 60%);border-color:rgba(251,191,36,.22)}
+.hero-lbl{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+.f1 .hero-lbl{color:var(--teal)}.f2 .hero-lbl{color:var(--purple)}.f3 .hero-lbl{color:var(--coral)}.f4 .hero-lbl{color:var(--amber)}
+.hero-name{font-size:19px;font-weight:600;margin-bottom:3px}
+.hero-sub{font-size:13px;color:var(--text2);margin-bottom:14px;line-height:1.5}
+.hero-pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{display:flex;align-items:center;gap:5px;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 10px;font-size:12px;color:var(--text2)}
+.prog-bar{height:3px;background:var(--border);border-radius:2px;overflow:hidden;margin-top:14px}
+.prog-fill{height:100%;border-radius:2px;transition:width .4s}
+.f1 .prog-fill{background:var(--teal)}.f2 .prog-fill{background:var(--purple)}.f3 .prog-fill{background:var(--coral)}
+
+.sec{margin:18px 16px 0}
+.sec-ttl{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--text3);text-transform:uppercase;margin-bottom:9px;display:flex;align-items:center;gap:8px}
+.sec-ttl::after{content:'';flex:1;height:1px;background:var(--border)}
+
+.tech-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:13px;margin-bottom:7px;display:flex;gap:11px;align-items:flex-start}
+.t-check{flex-shrink:0;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--border2);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .18s;background:var(--bg3);margin-top:1px;user-select:none;pointer-events:none}
+.tech-item{cursor:pointer}
+.tech-item:active{opacity:.8}
+.t-check.df1{background:var(--teal-dim);border-color:var(--teal)}
+.t-check.df2{background:var(--purple-dim);border-color:var(--purple)}
+.t-check.df3{background:var(--coral-dim);border-color:var(--coral)}
+.t-txt strong{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px}
+.t-txt p{font-size:12px;color:var(--text2);line-height:1.55}
+
+.tip{background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.2);border-radius:var(--rs);padding:11px 13px;font-size:12px;color:#93c5fd;line-height:1.6;margin-bottom:7px;display:flex;gap:9px;align-items:flex-start}
+.tip svg{flex-shrink:0;margin-top:2px;opacity:.7}
+
+.song{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:9px;overflow:hidden;transition:border-color .2s}
+.song.done{opacity:.55}
+.song-hdr{padding:13px;display:flex;gap:11px;align-items:flex-start;cursor:pointer;user-select:none}
+.s-num{flex-shrink:0;width:27px;height:27px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;font-weight:700;border:1.5px solid var(--border2);color:var(--text3);background:var(--bg3);pointer-events:none}
+.song.done .s-num{color:#0d0d0f;border-color:transparent}
+.song[data-ph="1"].done .s-num{background:var(--teal)}
+.song[data-ph="2"].done .s-num{background:var(--purple)}
+.song[data-ph="3"].done .s-num{background:var(--coral)}
+.s-info{flex:1;min-width:0;pointer-events:none}
+.s-title{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px}
+.s-artist{font-size:12px;color:var(--text2)}
+.s-badges{display:flex;gap:5px;margin-top:6px;flex-wrap:wrap}
+.badge{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.05em;padding:2px 7px;border-radius:10px;border:1px solid;text-transform:uppercase}
+.bmod{color:var(--amber);border-color:rgba(251,191,36,.3);background:var(--amber-dim)}
+.bf1{color:var(--teal);border-color:rgba(45,212,168,.25);background:var(--teal-dim)}
+.bf2{color:var(--purple);border-color:rgba(167,139,250,.25);background:var(--purple-dim)}
+.bf3{color:var(--coral);border-color:rgba(251,113,133,.25);background:var(--coral-dim)}
+.chev{width:27px;height:27px;display:flex;align-items:center;justify-content:center;color:var(--text3);transition:transform .25s,color .18s;flex-shrink:0;pointer-events:none}
+.chev.open{transform:rotate(180deg);color:var(--text2)}
+
+.s-detail{max-height:0;overflow:hidden;transition:max-height .32s ease}
+.s-detail.open{max-height:700px}
+.s-detail-in{padding:13px 13px 14px;border-top:1px solid var(--border)}
+.d-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:11px}
+.d-lbl{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--text3);text-transform:uppercase;margin-bottom:3px}
+.d-val{font-size:13px;color:var(--text2);line-height:1.5}
+.s-btns{display:flex;gap:7px;margin-top:13px}
+.btn-done{flex:1;padding:10px;border-radius:var(--rs);font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.04em;cursor:pointer;border:1.5px solid;background:transparent;display:flex;align-items:center;justify-content:center;gap:5px;transition:all .18s}
+.btn-done:active{transform:scale(.97)}
+.btn-done.cf1{color:var(--teal);border-color:rgba(45,212,168,.4)}
+.btn-done.cf1:hover{background:var(--teal-dim)}
+.btn-done.cf2{color:var(--purple);border-color:rgba(167,139,250,.4)}
+.btn-done.cf2:hover{background:var(--purple-dim)}
+.btn-done.cf3{color:var(--coral);border-color:rgba(251,113,133,.4)}
+.btn-done.cf3:hover{background:var(--coral-dim)}
+.btn-done.cdone{color:var(--text3);border-color:var(--border)}
+.btn-yt{padding:10px 13px;border-radius:var(--rs);background:var(--bg3);border:1.5px solid var(--border);color:var(--text2);font-family:var(--mono);font-size:11px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:5px;text-decoration:none;white-space:nowrap;letter-spacing:.04em;transition:all .18s}
+.btn-yt:hover{border-color:var(--border2);color:var(--text)}
+.btn-yt:active{transform:scale(.97)}
+
+.ready-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:13px}
+.ready-ttl{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:9px}
+.r-item{display:flex;gap:10px;align-items:flex-start;padding:7px 0;font-size:13px;color:var(--text2);line-height:1.5;cursor:pointer;user-select:none}
+.r-item+.r-item{border-top:1px solid var(--border)}
+.r-check{flex-shrink:0;width:17px;height:17px;border-radius:4px;border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;margin-top:2px;transition:all .18s;background:var(--bg4);pointer-events:none}
+.r-check.cf1{background:var(--teal);border-color:var(--teal)}
+.r-check.cf2{background:var(--purple);border-color:var(--purple)}
+.r-check.cf3{background:var(--coral);border-color:var(--coral)}
+.r-item.ischecked{color:var(--text3);text-decoration:line-through}
+
+.rt-row{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--border)}
+.rt-row:last-child{border-bottom:none}
+.rt-time{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--text3);min-width:36px;padding-top:1px}
+.rt-info strong{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px}
+.rt-info p{font-size:12px;color:var(--text2);line-height:1.5}
+
+.res-item{display:flex;gap:10px;align-items:center;padding:11px 13px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);margin-bottom:7px;text-decoration:none}
+.res-item strong{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:1px}
+.res-item span{font-size:12px;color:var(--text2)}
+.res-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.spacer{height:32px}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-title">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+    Plan <em>Guitarra</em>
+  </div>
+  <div class="hdr-prog" id="gp">cargando...</div>
+</header>
+
+<div class="tabs" id="tabs">
+  <button class="tab" data-action="tab" data-phase="1">F1 · Fundamentos</button>
+  <button class="tab" data-action="tab" data-phase="2">F2 · Mástil</button>
+  <button class="tab" data-action="tab" data-phase="3">F3 · Musicalidad</button>
+  <button class="tab" data-action="tab" data-phase="4">Rutina</button>
+</div>
+
+<div id="content"></div>
+<div class="spacer"></div>
+
+<script>
+// DATA
+const PH=[
+  {id:1,name:"Fundamentos reales",sub:"Ritmo sólido · mástil desbloqueado · progresiones nuevas",dur:"Meses 1-2",ses:"30-40 min/día",
+    tech:[
+      {id:"t1_1",title:"Notas en cuerdas 6 y 5",desc:"10 min al día durante 2-3 semanas. Di la nota en voz alta mientras la tocas. Hasta traste 12. Cuando las sepas sin dudar, marca esto."},
+      {id:"t1_2",title:"Metrónomo desde ya",desc:"Empieza a 60 bpm con cualquier canción. Sube 5 bpm solo cuando salga limpio. Nunca practiques sin él en fase de aprendizaje."},
+      {id:"t1_3",title:"Construcción básica de acordes",desc:"Mayor = 1-3-5. Menor = 1-b3-5. Media hora de lectura una sola vez. Te da contexto para todo lo demás."},
+    ],
+    tip:"Canal recomendado: JustinGuitar (gratis). Para notas del mástil busca en YouTube \"fretboard notes memorization\" — hay videos de 10 min muy claros.",
+    songs:[
+      {id:"s1_1",title:"Wish You Were Here",artist:"Pink Floyd",modern:false,concept:"Ritmo + dinámica",harmony:"G-Em-A-C",rhythm:"Intro fingerpicking + strumming",voicing:"G y C con extensiones",focus:"Aprende la intro fingerpicking de memoria primero. Luego los acordes con strumming. No pases a la siguiente hasta que la intro salga sola.",yt:"Wish You Were Here Pink Floyd guitar lesson tutorial"},
+      {id:"s1_2",title:"Knockin' on Heaven's Door",artist:"Bob Dylan",modern:false,concept:"Progresión I-VII-IV",harmony:"G-D-Am / G-D-C",rhythm:"Strumming relajado",voicing:"Open chords claros",focus:"Practica el cambio G→D→Am hasta que no tengas que pensar. Es el patrón más común del rock.",yt:"Knockin on Heaven's Door guitar lesson beginner"},
+      {id:"s1_3",title:"Wonderwall",artist:"Oasis",modern:false,concept:"Acordes con cejilla parcial",harmony:"Cadd9, G, Em7, Dsus4",rhythm:"Síncopa básica",voicing:"Cadd9 y Em7 con cuerdas al aire",focus:"El patrón rítmico con síncopa es el reto. Busca \"down down up up down up\" y practica con metrónomo antes de cantarlo.",yt:"Wonderwall Oasis guitar lesson strumming pattern"},
+      {id:"s1_4",title:"Let Her Go",artist:"Passenger",modern:false,concept:"Tonalidad completa",harmony:"F-G-Am-C",rhythm:"Fingerpicking simple",voicing:"Voicings con cuerdas al aire",focus:"Fíjate en cómo las notas al aire conectan los acordes. Primera idea de movimiento dentro del acorde.",yt:"Let Her Go Passenger guitar lesson tutorial"},
+      {id:"s1_5",title:"Brown Eyed Girl",artist:"Van Morrison",modern:false,concept:"Ritmo shuffle",harmony:"G-C-G-D",rhythm:"Shuffle / swing",voicing:"Open chords puros",focus:"El shuffle es diferente al strumming recto. Escucha la canción 10 veces antes de tocarla.",yt:"Brown Eyed Girl guitar lesson shuffle rhythm"},
+      {id:"s1_6",title:"The Scientist",artist:"Coldplay",modern:true,concept:"Arpegios sobre progresión",harmony:"Dm-Bb-F-C",rhythm:"Arpegios constantes en 4/4",voicing:"Dm y Bb open chord",focus:"La intro es arpegios puros, patrón p-i-m-a constante. Domina el patrón antes de intentar los acordes.",yt:"The Scientist Coldplay guitar tutorial arpeggio"},
+      {id:"s1_7",title:"505",artist:"Arctic Monkeys",modern:true,concept:"Progresión oscura",harmony:"Dm-Am-C-G",rhythm:"Strumming contenido",voicing:"Dm como acorde pivote",focus:"Fuerza en el downstroke, suave en el upstroke. El groove depende de que el ritmo sea sutil, no agresivo.",yt:"505 Arctic Monkeys guitar lesson tutorial"},
+      {id:"s1_8",title:"bad guy",artist:"Billie Eilish",modern:true,concept:"Minimalismo rítmico",harmony:"Am-G rítmico",rhythm:"Patrón mínimo, mucho silencio",voicing:"Simpleza total, enfoque en timing",focus:"El reto no son los acordes — es el timing perfecto. Cada golpe tiene que caer exacto. Metrónomo obligatorio.",yt:"bad guy Billie Eilish guitar lesson"},
+    ],
+    ready:[
+      {id:"r1_1",text:"Tocas las canciones de memoria sin mirar los dedos"},
+      {id:"r1_2",text:"Sabes las notas en cuerdas 6 y 5 sin dudar"},
+      {id:"r1_3",text:"El metrónomo ya no te pone nervioso"},
+    ]
+  },
+  {id:2,name:"Mástil completo",sub:"Sistema CAGED · barre chords · primeras melodías",dur:"Meses 3-5",ses:"30-40 min/día",
+    tech:[
+      {id:"t2_1",title:"Sistema CAGED — prioridad absoluta",desc:"Aprende las 5 formas en orden: E, A, C, D, G. Tu Fa mayor (forma E) en traste 3 = Sol mayor, en traste 5 = La mayor. Una forma por semana, aplicada siempre a una canción real."},
+      {id:"t2_2",title:"Barre chords — posición del pulgar",desc:"El problema no es la fuerza, es el pulgar. Ponlo justo detrás del traste, no encima. Practica solo el barre (sin dedos 2-3-4) hasta que todas las cuerdas suenen limpias."},
+      {id:"t2_3",title:"Pentatónica menor posición 1",desc:"El patrón lo aprendes en 20 min. Luego lo usas sobre backing tracks. Busca \"Am pentatonic position 1\" — son 12 notas en 5 trastes. La teoría viene después de sonar."},
+    ],
+    tip:"Busca en YouTube: \"CAGED System Justin Guitar\" — serie de 5 videos, uno por forma. El mejor recurso gratuito para esto.",
+    songs:[
+      {id:"s2_1",title:"Creep",artist:"Radiohead",modern:false,concept:"Barre en contexto real",harmony:"G-B-C-Cm",rhythm:"Strumming dinámico",voicing:"Forma E moviéndose",focus:"El Cm es la clave. Cuando ese acorde suene limpio en la canción, los barre chords ya son tuyos.",yt:"Creep Radiohead guitar lesson barre chord"},
+      {id:"s2_2",title:"Hotel California (intro)",artist:"Eagles",modern:false,concept:"CAGED + arpegios",harmony:"Forma E por el mástil",rhythm:"Arpegios fingerpicking",voicing:"Barre con arpegios",focus:"Aprende solo la intro. Es el mejor ejercicio de CAGED + arpegios que existe. No sigas hasta que suene reconocible.",yt:"Hotel California intro guitar lesson fingerpicking"},
+      {id:"s2_3",title:"More Than Words",artist:"Extreme",modern:false,concept:"Acordes con 7ª y add9",harmony:"G-Cadd9-Am7-D",rhythm:"Fingerpicking básico",voicing:"Voicings ricos con extensiones",focus:"El objetivo es el sonido de los acordes, no la velocidad. Cada acorde debe resonar completo antes de cambiar.",yt:"More Than Words Extreme guitar lesson tutorial"},
+      {id:"s2_4",title:"Fast Car",artist:"Tracy Chapman",modern:false,concept:"Travis picking básico",harmony:"C-G-Am-F",rhythm:"Pulgar alternado + dedos",voicing:"Open chords con bajo móvil",focus:"El bajo del pulgar va constante. Empieza solo con el pulgar, luego añade los otros dedos. Hazlo lentísimo con metrónomo.",yt:"Fast Car Tracy Chapman guitar Travis picking"},
+      {id:"s2_5",title:"Blackbird",artist:"Beatles",modern:false,concept:"Melodía + bajo simultáneo",harmony:"Forma G CAGED moviéndose",rhythm:"Fingerstyle independiente",voicing:"Melodía en primera cuerda",focus:"La más difícil de la fase. Aprende solo la primera frase (4 compases). Frase a frase, sin prisa.",yt:"Blackbird Beatles guitar lesson Paul McCartney"},
+      {id:"s2_6",title:"Zombie",artist:"Cranberries",modern:false,concept:"Barre chords con ritmo potente",harmony:"Am-C-G-F (barre)",rhythm:"Strumming contundente",voicing:"Forma E en posición 5",focus:"Toca los barre chords con el ritmo de la canción original. El objetivo es que suene igual de contundente.",yt:"Zombie Cranberries guitar lesson barre chords"},
+      {id:"s2_7",title:"Mr. Brightside",artist:"The Killers",modern:true,concept:"CAGED forma E en acción",harmony:"G-D-Em-C posiciones altas",rhythm:"Strumming energético",voicing:"Barre en zona alta del mástil",focus:"La energía viene del ritmo, no de la velocidad. Sube el BPM solo cuando cada acorde suene limpio.",yt:"Mr Brightside The Killers guitar lesson tutorial"},
+      {id:"s2_8",title:"drivers license",artist:"Olivia Rodrigo",modern:true,concept:"Voicings con extensiones",harmony:"F-C-Am-G con variaciones",rhythm:"Fingerpicking suave",voicing:"Fmaj7, Gsus4, Am7",focus:"Los acordes con extensiones (maj7, sus4) son el punto clave. Escucha la diferencia de color entre F y Fmaj7.",yt:"Drivers License Olivia Rodrigo guitar lesson"},
+      {id:"s2_9",title:"Lose Yourself to Dance",artist:"Daft Punk / Nile Rodgers",modern:true,concept:"Ritmo funk y muting",harmony:"Em7-A7 repetido",rhythm:"Funk con apagado de palma",voicing:"Shell chords — solo raíz y 7ª",focus:"Shell chords: solo raíz y 7ª. No toques más notas de las necesarias. El groove viene del ritmo y el silencio.",yt:"Lose Yourself to Dance Nile Rodgers guitar funk lesson"},
+    ],
+    ready:[
+      {id:"r2_1",text:"Puedes tocar G mayor en al menos 3 posiciones distintas del mástil"},
+      {id:"r2_2",text:"Los barre chords no cortan el flujo de una canción"},
+      {id:"r2_3",text:"La intro de Hotel California sale reconocible"},
+    ]
+  },
+  {id:3,name:"Musicalidad real",sub:"Fingerstyle completo · improvisación · arreglos propios",dur:"Meses 6-8",ses:"35-45 min/día",
+    tech:[
+      {id:"t3_1",title:"Conectar pentatónicas (posiciones 2 y 3)",desc:"Aprende posición 2 y 3 y practica moviéndote entre ellas sin parar. El objetivo es no estar atascado en una caja. Backing track Am, 10 min al día."},
+      {id:"t3_2",title:"Triadas en cuerdas agudas (1-2-3)",desc:"Acordes de 3 notas en posiciones altas. Cambian la forma en que ves el mástil. Busca \"triad shapes guitar\" — 30 minutos de estudio, luego las aplicas en canciones."},
+      {id:"t3_3",title:"Oído: saca acordes por tu cuenta",desc:"10 minutos al día intentando sacar el acorde de una canción antes de buscarlo. No importa equivocarse, importa el hábito. Empieza con canciones de 2-3 acordes."},
+    ],
+    tip:"Para backing tracks gratuitos busca: \"A minor backing track slow\" o \"G major backing track\". 10 min al día de improvisación libre es la práctica más eficiente que existe.",
+    songs:[
+      {id:"s3_1",title:"Dust in the Wind",artist:"Kansas",modern:false,concept:"Arpegios puros constantes",harmony:"C-Am-G-D-Am",rhythm:"p-i-m-a-m-i constante",voicing:"Open chords con pedal",focus:"El patrón p-i-m-a no cambia en toda la canción. Domínalo aquí y lo tendrás para siempre.",yt:"Dust in the Wind Kansas guitar tutorial fingerpicking"},
+      {id:"s3_2",title:"Classical Gas",artist:"Mason Williams",modern:false,concept:"Fingerstyle complejo",harmony:"Am-G-F-E forma flamenca",rhythm:"Bajo independiente + melodía",voicing:"Arpegios con bajo alternado",focus:"Difícil. Aprende frase a frase. Si en 2 semanas no avanzas, vuelve a Blackbird y regresa luego.",yt:"Classical Gas Mason Williams guitar tutorial"},
+      {id:"s3_3",title:"Tears in Heaven",artist:"Eric Clapton",modern:false,concept:"Melodía cantable + expresión",harmony:"A-E-F#m-D-E",rhythm:"Fingerpicking expresivo",voicing:"Forma A de CAGED en melodía",focus:"El objetivo es que suene a música, no a ejercicio. Cada nota debe tener intención. Deja que la melodía respire.",yt:"Tears in Heaven Eric Clapton guitar lesson"},
+      {id:"s3_4",title:"Wonderful Tonight",artist:"Eric Clapton",modern:false,concept:"Primer solo real",harmony:"G-D-C-G",rhythm:"Solo pentatónico simple",voicing:"Melodía en primera posición pentatónica",focus:"El solo es pentatónico. Aprende nota a nota. Si no sabes por qué tocas una nota, no la toques.",yt:"Wonderful Tonight Eric Clapton guitar solo lesson"},
+      {id:"s3_5",title:"Babe I'm Gonna Leave You",artist:"Led Zeppelin",modern:false,concept:"Dinámica extrema",harmony:"Am-Am7-Am6-Amaj7-F-E",rhythm:"Fingerstyle + strumming en transición",voicing:"Descenso cromático en bajo",focus:"La parte suave es fingerstyle, la dura es strumming. El reto es la transición entre los dos mundos.",yt:"Babe I'm Gonna Leave You Led Zeppelin guitar tutorial"},
+      {id:"s3_6",title:"Canción propia",artist:"Tú",modern:false,concept:"Síntesis de todo",harmony:"4 acordes en tonalidad propia",rhythm:"El que quieras",voicing:"Voicings del sistema CAGED",focus:"Coge 4 acordes del sistema CAGED, una tonalidad, y crea algo. No tiene que ser bueno. Tiene que ser tuyo.",yt:"chord progression guitar own song how to write"},
+      {id:"s3_7",title:"Heather",artist:"Conan Gray",modern:true,concept:"Fingerstyle + melodía simultánea",harmony:"C-G-Am-F con inversiones",rhythm:"Fingerpicking + bajo alternado",voicing:"Inversiones de bajo (bajo en tercera)",focus:"Las inversiones de bajo dan movimiento sin cambiar de acorde. Obsesiónate con el bajo.",yt:"Heather Conan Gray guitar fingerstyle tutorial"},
+      {id:"s3_8",title:"Supercut",artist:"Lorde",modern:true,concept:"Progresión modal",harmony:"Dm-Bb-F-C modo dórico",rhythm:"Arpegios + strumming mixto",voicing:"Dm como tónica",focus:"Esta progresión es modal — Dm es el hogar, no C. Escucha la tensión de no resolver en C.",yt:"Supercut Lorde guitar lesson tutorial"},
+      {id:"s3_9",title:"Ivy",artist:"Frank Ocean",modern:true,concept:"Acordes extendidos jazz-pop",harmony:"Fmaj7-Am-Dm-Bb",rhythm:"Fingerstyle suave",voicing:"maj7 y extensiones jazz",focus:"Los maj7 son el siguiente nivel armónico. Escucha cada acorde y siente la diferencia con el mayor normal.",yt:"Ivy Frank Ocean guitar lesson chords"},
+    ],
+    ready:[
+      {id:"r3_1",text:"Escuchas una canción y puedes identificar la tonalidad aproximada"},
+      {id:"r3_2",text:"Improvisando sobre backing track, algunas frases suenan bien sin haberlas planeado"},
+      {id:"r3_3",text:"Has creado una progresión propia que te gusta escuchar"},
+    ]
+  }
+];
+
+const ROUTINE=[
+  {time:"5'",name:"Calentamiento",desc:"Escala o arpegios lentos. Nada nuevo, solo calentar dedos."},
+  {time:"10'",name:"Bloque técnico",desc:"Lo que toque de la fase actual. Con metrónomo, lento."},
+  {time:"15'",name:"Canción actual",desc:"La que estés aprendiendo. Frase a frase si hace falta."},
+  {time:"10'",name:"Libre",desc:"Improvisa, toca algo conocido, experimenta. Sin reglas."},
+];
+
+const RES=[
+  {name:"JustinGuitar",desc:"CAGED, barre chords, fundamentos. Gratis.",url:"https://www.justinguitar.com",col:"#fbbf24"},
+  {name:"Paul Davids (YouTube)",desc:"Teoría aplicada, voicings, progresiones.",url:"https://www.youtube.com/@PaulDavids",col:"#a78bfa"},
+  {name:"GuitarZero2Hero (YouTube)",desc:"Fingerstyle y Travis picking.",url:"https://www.youtube.com/@GuitarZero2Hero",col:"#2dd4a8"},
+  {name:"Backing tracks en YouTube",desc:"Busca \"[tonalidad] minor backing track slow\".",url:"https://www.youtube.com/results?search_query=A+minor+backing+track+slow",col:"#fb7185"},
+];
+
+// STATE
+const SK="gp_v4";
+function load(){try{const s=localStorage.getItem(SK);return s?JSON.parse(s):{}}catch{return{}}}
+function persist(){try{localStorage.setItem(SK,JSON.stringify(ST))}catch{}}
+let ST=load();
+if(!ST.phase)ST.phase=1;
+if(!ST.songs)ST.songs={};
+if(!ST.tech)ST.tech={};
+if(!ST.ready)ST.ready={};
+if(!ST.open)ST.open={};
+
+// ICONS
+const iCheck=(col)=>`<svg width="11" height="11" viewBox="0 0 12 12" fill="none"><polyline points="1.5,6 4.5,9 10.5,2.5" stroke="${col}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const iCheckW=()=>`<svg width="11" height="11" viewBox="0 0 12 12" fill="none"><polyline points="1.5,6 4.5,9 10.5,2.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const iCheckSm=()=>`<svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="1.5,6 4.5,9 10.5,2.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const iYt=()=>`<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>`;
+
+const PC=(p)=>p===1?'f1':p===2?'f2':'f3';
+const PV=(p)=>p===1?'var(--teal)':p===2?'var(--purple)':'var(--coral)';
+const totalSongs=()=>PH.reduce((a,p)=>a+p.songs.length,0);
+const doneSongs=()=>Object.values(ST.songs).filter(Boolean).length;
+const phaseDone=(ph)=>ph.songs.filter(s=>ST.songs[s.id]).length;
+
+// BUILD HTML
+function buildPhase(ph){
+  const tot=ph.songs.length, done=phaseDone(ph), pct=Math.round(done/tot*100);
+  const pc=PC(ph.id), pv=PV(ph.id);
+
+  const techRows=ph.tech.map(t=>{
+    const d=!!ST.tech[t.id];
+    return `<div class="tech-item" data-action="tech" data-id="${t.id}" data-ph="${ph.id}">
+      <div class="t-check ${d?'d'+pc:''}">${d?iCheck(pv):''}</div>
+      <div class="t-txt"><strong>${t.title}</strong><p>${t.desc}</p></div>
+    </div>`;
+  }).join('');
+
+  const songRows=ph.songs.map((s,i)=>{
+    const d=!!ST.songs[s.id], op=!!ST.open[s.id];
+    return `<div class="song ${d?'done':''}" data-ph="${ph.id}" id="sc_${s.id}">
+      <div class="song-hdr" data-action="song" data-id="${s.id}">
+        <div class="s-num">${d?iCheckW():i+1}</div>
+        <div class="s-info">
+          <div class="s-title">${s.title}</div>
+          <div class="s-artist">${s.artist}</div>
+          <div class="s-badges">${s.modern?'<span class="badge bmod">★ moderna</span>':''}<span class="badge b${pc}">${s.concept}</span></div>
+        </div>
+        <div class="chev ${op?'open':''}" id="cv_${s.id}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </div>
+      <div class="s-detail ${op?'open':''}" id="sd_${s.id}">
+        <div class="s-detail-in">
+          <div class="d-grid">
+            <div><div class="d-lbl">Técnica</div><div class="d-val">${s.rhythm}</div></div>
+            <div><div class="d-lbl">Armonía</div><div class="d-val">${s.harmony}</div></div>
+            <div><div class="d-lbl">Voicing</div><div class="d-val">${s.voicing}</div></div>
+            <div><div class="d-lbl">Concepto</div><div class="d-val">${s.concept}</div></div>
+          </div>
+          <div><div class="d-lbl">En qué enfocarte</div><div class="d-val" style="color:var(--text2);line-height:1.6">${s.focus}</div></div>
+          <div class="s-btns">
+            <button class="btn-done c${pc} ${d?'cdone':''}" data-action="done" data-id="${s.id}" data-ph="${ph.id}">
+              ${iCheckW()} ${d?'Completada':'Marcar como lista'}
+            </button>
+            <a class="btn-yt" href="https://www.youtube.com/results?search_query=${encodeURIComponent(s.yt)}" target="_blank">${iYt()} YT</a>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const readyRows=ph.ready.map(r=>{
+    const c=!!ST.ready[r.id];
+    return `<div class="r-item ${c?'ischecked':''}" data-action="ready" data-id="${r.id}" data-ph="${ph.id}">
+      <div class="r-check ${c?'c'+pc:''}" id="rc_${r.id}">${c?iCheckSm():''}</div>
+      <span>${r.text}</span>
+    </div>`;
+  }).join('');
+
+  return `
+    <div class="hero f${ph.id}">
+      <div class="hero-lbl">Fase ${ph.id}</div>
+      <div class="hero-name">${ph.name}</div>
+      <div class="hero-sub">${ph.sub}</div>
+      <div class="hero-pills">
+        <div class="pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ${ph.dur}</div>
+        <div class="pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18V5l12-2v13"/></svg> ${ph.ses}</div>
+        <div class="pill" id="pp${ph.id}" style="color:${pv}">${done}/${tot} canciones</div>
+      </div>
+      <div class="prog-bar f${ph.id}"><div class="prog-fill" id="pf${ph.id}" style="width:${pct}%"></div></div>
+    </div>
+    <div class="sec"><div class="sec-ttl">Bloque técnico</div>
+      ${techRows}
+      <div class="tip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> ${ph.tip}</div>
+    </div>
+    <div class="sec"><div class="sec-ttl">Canciones</div>${songRows}</div>
+    <div class="sec"><div class="sec-ttl">Listo para la siguiente fase</div>
+      <div class="ready-box"><div class="ready-ttl">Marca cuando lo tengas</div>${readyRows}</div>
+    </div>`;
+}
+
+function buildRoutine(){
+  return `<div class="hero f4">
+    <div class="hero-lbl">Rutina diaria</div>
+    <div class="hero-name">30-40 minutos al día</div>
+    <div class="hero-sub">Consistencia por encima de intensidad. Todos los días un poco.</div>
+  </div>
+  <div class="sec"><div class="sec-ttl">Estructura</div>
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:4px 13px">
+      ${ROUTINE.map(r=>`<div class="rt-row"><div class="rt-time">${r.time}</div><div class="rt-info"><strong>${r.name}</strong><p>${r.desc}</p></div></div>`).join('')}
+    </div>
+  </div>
+  <div class="sec"><div class="sec-ttl">Recursos</div>
+    ${RES.map(r=>`<a href="${r.url}" target="_blank" class="res-item">
+      <div class="res-icon" style="background:${r.col}22;border:1px solid ${r.col}44">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="${r.col}" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </div>
+      <div><strong>${r.name}</strong><span>${r.desc}</span></div>
+    </a>`).join('')}
+  </div>`;
+}
+
+// RENDER
+function render(){
+  updateTabs();
+  const el=document.getElementById('content');
+  el.innerHTML=ST.phase===4?buildRoutine():buildPhase(PH.find(p=>p.id===ST.phase));
+  updateGP();
+}
+
+function updateTabs(){
+  document.querySelectorAll('.tab').forEach(t=>{
+    const tp=+t.dataset.phase;
+    t.className='tab'+(tp===ST.phase?(tp<=3?` af${tp}`:' af4'):'');
+  });
+}
+
+function updateGP(){
+  const el=document.getElementById('gp');
+  if(el)el.innerHTML=`<b>${doneSongs()}</b> / ${totalSongs()} canciones`;
+}
+
+function refreshProgress(phid){
+  const ph=PH.find(p=>p.id===phid); if(!ph)return;
+  const done=phaseDone(ph),tot=ph.songs.length,pct=Math.round(done/tot*100);
+  const bar=document.getElementById(`pf${phid}`);
+  const pip=document.getElementById(`pp${phid}`);
+  if(bar)bar.style.width=pct+'%';
+  if(pip)pip.textContent=`${done}/${tot} canciones`;
+}
+
+// SINGLE EVENT LISTENER — event delegation
+document.addEventListener('click',function(e){
+  let node=e.target;
+  while(node&&node!==document.body){
+    const act=node.dataset&&node.dataset.action;
+    if(!act){node=node.parentElement;continue;}
+
+    if(act==='tab'){
+      ST.phase=+node.dataset.phase; persist(); render(); return;
+    }
+
+    if(act==='tech'){
+      const id=node.dataset.id, ph=+node.dataset.ph;
+      ST.tech[id]=!ST.tech[id]; persist();
+      const pc=PC(ph), pv=PV(ph), done=ST.tech[id];
+      const chk=node.querySelector('.t-check');
+      if(chk){chk.className=`t-check ${done?'d'+pc:''}`;chk.innerHTML=done?iCheck(pv):'';}
+      return;
+    }
+
+    if(act==='song'){
+      // Don't toggle if clicking the done button or yt link inside
+      if(e.target.closest('[data-action="done"]')||e.target.closest('.btn-yt'))return;
+      const id=node.dataset.id;
+      ST.open[id]=!ST.open[id]; persist();
+      const det=document.getElementById(`sd_${id}`);
+      const cv=document.getElementById(`cv_${id}`);
+      if(det)det.classList.toggle('open',!!ST.open[id]);
+      if(cv)cv.classList.toggle('open',!!ST.open[id]);
+      return;
+    }
+
+    if(act==='done'){
+      e.stopPropagation();
+      const id=node.dataset.id, ph=+node.dataset.ph;
+      ST.songs[id]=!ST.songs[id]; persist();
+      // Rebuild just this card
+      const phData=PH.find(p=>p.id===ph);
+      const s=phData.songs.find(x=>x.id===id);
+      const idx=phData.songs.indexOf(s)+1;
+      const d=!!ST.songs[id], op=!!ST.open[id];
+      const pc=PC(ph),pv=PV(ph);
+      const cardHTML=`<div class="song ${d?'done':''}" data-ph="${ph}" id="sc_${s.id}">
+        <div class="song-hdr" data-action="song" data-id="${s.id}">
+          <div class="s-num">${d?iCheckW():idx}</div>
+          <div class="s-info">
+            <div class="s-title">${s.title}</div>
+            <div class="s-artist">${s.artist}</div>
+            <div class="s-badges">${s.modern?'<span class="badge bmod">★ moderna</span>':''}<span class="badge b${pc}">${s.concept}</span></div>
+          </div>
+          <div class="chev ${op?'open':''}" id="cv_${s.id}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="s-detail ${op?'open':''}" id="sd_${s.id}">
+          <div class="s-detail-in">
+            <div class="d-grid">
+              <div><div class="d-lbl">Técnica</div><div class="d-val">${s.rhythm}</div></div>
+              <div><div class="d-lbl">Armonía</div><div class="d-val">${s.harmony}</div></div>
+              <div><div class="d-lbl">Voicing</div><div class="d-val">${s.voicing}</div></div>
+              <div><div class="d-lbl">Concepto</div><div class="d-val">${s.concept}</div></div>
+            </div>
+            <div><div class="d-lbl">En qué enfocarte</div><div class="d-val" style="color:var(--text2);line-height:1.6">${s.focus}</div></div>
+            <div class="s-btns">
+              <button class="btn-done c${pc} ${d?'cdone':''}" data-action="done" data-id="${s.id}" data-ph="${ph}">
+                ${iCheckW()} ${d?'Completada':'Marcar como lista'}
+              </button>
+              <a class="btn-yt" href="https://www.youtube.com/results?search_query=${encodeURIComponent(s.yt)}" target="_blank">${iYt()} YT</a>
+            </div>
+          </div>
+        </div>
+      </div>`;
+      const old=document.getElementById(`sc_${id}`);
+      if(old){const tmp=document.createElement('div');tmp.innerHTML=cardHTML;old.replaceWith(tmp.firstChild);}
+      refreshProgress(ph); updateGP();
+      return;
+    }
+
+    if(act==='ready'){
+      const id=node.dataset.id, ph=+node.dataset.ph;
+      ST.ready[id]=!ST.ready[id]; persist();
+      const pc=PC(ph), c=ST.ready[id];
+      const chk=document.getElementById(`rc_${id}`);
+      if(chk){chk.className=`r-check ${c?'c'+pc:''}`;chk.innerHTML=c?iCheckSm():'';}
+      node.classList.toggle('ischecked',c);
+      return;
+    }
+
+    node=node.parentElement;
+  }
+});
+
+render();
+</script>
+</body>
+</html>
